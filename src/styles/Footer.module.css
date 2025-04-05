@@ -1,0 +1,8 @@
+.footer {
+    background-color: white;
+    padding: 2rem;
+    border-top: 3px solid #FF69B4; /* --pink-primary */
+    text-align: center;
+    font-size: 0.95rem;
+    color: #333333; /* --foreground */
+  }  
