@@ -1,0 +1,33 @@
+.navbar {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background-color: #ffe4e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .logo {
+    color: #ec4899;
+    font-weight: 700;
+    font-size: 1.7rem;
+    font-family: "Fredoka", sans-serif;
+  }
+  
+  .button {
+    background-color: white;
+    border: 1px solid #f9a8d4;
+    color: #db2777;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .button:hover {
+    background-color: #fbcfe8;
+    transform: scale(1.05);
+  }  
