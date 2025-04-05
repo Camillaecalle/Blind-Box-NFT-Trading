@@ -2,20 +2,37 @@
     display: flex;
     justify-content: center;
     gap: 2rem;
-    padding: 2rem 1rem;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  
-  .boxCard {
-    background-color: white;
-    border-radius: 12px; /* --border-radius */
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* --box-shadow */
+    padding: 4rem 1rem;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    overflow-x: auto; 
+  }  
+
+    .boxCard {
+    border-radius: 24px;
+    padding: 1rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
-  }
+    min-width: 260px;
+    text-align: center;
+    max-width: 260px;
+    min-width: 240px;
+    flex: 1 0 auto;
+    }
+
+    /* Pastel colors */
+    .boxCard:nth-child(1) {
+    background-color: #e6e6fa; /* lavender */
+    }
+
+    .boxCard:nth-child(2) {
+    background-color: #fffacd; /* light yellow */
+    }
+
+    .boxCard:nth-child(3) {
+    background-color: #e0ffff; /* light blue */
+    }
   
   .boxCard:hover {
     transform: translateY(-5px);
@@ -23,9 +40,23 @@
   }
   
   .boxImage {
+    position: relative;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    aspect-ratio: 1 / 1; /* ✅ Better than padding trick */
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  }
+  
+  .previewImage {
+    width: 65%;
+    height: 65%;
+    object-fit: contain;
   }
   
   .boxContent {
@@ -33,33 +64,34 @@
   }
   
   .boxTitle {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #FF1493; /* --pink-dark */
+    color: #d63384;
   }
   
   .boxPrice {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #333333; /* --foreground */
+    margin: 0.25rem 0;
   }
   
-  .decorativeElement {
+  /* .decorativeElement {
     position: absolute;
     width: 40px;
     height: 40px;
     background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5L23.5267 15.8744H35.2865L25.8799 22.7012L29.4066 33.5756L20 26.7488L10.5934 33.5756L14.1201 22.7012L4.71352 15.8744H16.4733L20 5Z' fill='%23FFFACD'/%3E%3C/svg%3E");
-  }
+  } */
   
-  .topLeft {
+  /* .topLeft {
     top: -10px;
     left: -10px;
-  }
+  } */
   
-  .bottomRight {
+  /* .bottomRight {
     bottom: -10px;
     right: -10px;
-  }
+  } */
   
   @media (max-width: 768px) {
     .boxGrid {
@@ -69,10 +101,50 @@
   }
   
   .boxRarity {
-    font-size: 0.85rem;
-    color: #666;
+    font-size: 0.9rem;
     font-style: italic;
-    text-align: center;
+    color: #555;
     margin-top: 0.25rem;
   }
   
+  .openButton {
+    margin-top: 1.25rem;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.4);
+    transition: transform 0.2s ease;
+  }
+  
+  .openButton:hover {
+    background-color: #db2877;
+    transform: scale(1.05);
+  }  
+
+  @keyframes float {
+    0% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-4px);
+    }
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  
+  .bow {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    z-index: 5;
+    pointer-events: none;
+    animation: float 3s ease-in-out infinite;
+  }  

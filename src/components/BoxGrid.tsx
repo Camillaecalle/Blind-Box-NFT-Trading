@@ -7,7 +7,8 @@ const BoxGrid = () => {
       title: "Platinum Box",
       price: "Ξ0.05",
       rarity: "Highest Rare Drop Rate",
-      image: "/placeholder.svg",
+      // image: "/placeholder.svg",
+      image: "/assets/platinum-box.png",
     },
     {
       title: "Gold Box",
@@ -27,14 +28,19 @@ const BoxGrid = () => {
     <div className={styles.boxGrid}>
       {boxes.map((box, i) => (
         <div className={styles.boxCard} key={i}>
-          <div className={`${styles.decorativeElement} ${styles.topLeft}`} />
-          <img src={box.image} alt={box.title} className={styles.boxImage} />
+          <img src="/assets/bow.png" alt="Bow ribbon" className={styles.bow} />
+          {/* <div className={`${styles.decorativeElement} ${styles.topLeft}`} /> */}
+          <img src={box.image} alt="" className={styles.boxImage} />
+          {/* <div className={styles.boxImage}> */}
+            {/* <img src="/assets/logo.png" alt="" className={styles.previewImage} /> */}
+          {/* </div> */}
           <div className={styles.boxContent}>
             <h3 className={styles.boxTitle}>{box.title}</h3>
             <p className={styles.boxPrice}>{box.price}</p>
             <p className={styles.boxRarity}>{box.rarity}</p>
+            <button className={styles.openButton}>Open Box</button>
           </div>
-          <div className={`${styles.decorativeElement} ${styles.bottomRight}`} />
+          {/* <div className={`${styles.decorativeElement} ${styles.bottomRight}`} /> */}
         </div>
       ))}
     </div>
