@@ -1,23 +1,23 @@
 .pageWrapper {
-    /* background-color: #FCEFF9; */
     background-color: #fef1f6;
     color: #333;
     font-family: 'Fredoka', sans-serif;
     margin: 0;
     padding: 0;
     width: 100vw;
-    min-height: 100vh; /* full screen height */
+    min-height: 100vh;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
   
-  .wavyBorder {
-    width: 100vw;
-    min-width: 100vw;
-    height: 24px;
-    background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0C0 0 20 12 40 12C60 12 80 0 100 0C120 0 140 12 160 12C180 12 200 0 220 0C240 0 260 12 280 12C300 12 320 0 340 0C360 0 380 12 400 12C420 12 440 0 460 0C480 0 500 12 520 12C540 12 560 0 580 0C600 0 620 12 640 12C660 12 680 0 700 0C720 0 740 12 760 12C780 12 800 0 820 0C840 0 860 12 880 12C900 12 920 0 940 0C960 0 980 12 1000 12C1020 12 1040 0 1060 0C1080 0 1100 12 1120 12C1140 12 1160 0 1180 0C1200 0 1220 12 1240 12C1260 12 1280 0 1300 0' stroke='%23FF69B4' stroke-width='3'/%3E%3C/svg%3E");
-    background-repeat: repeat-x;
-    background-position: center;
+  .pageWrapper :global(html),
+  .pageWrapper :global(body),
+  .pageWrapper :global(#__next) {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
   }  

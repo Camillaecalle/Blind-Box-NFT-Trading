@@ -1,0 +1,217 @@
+/* styles/BoxAnimation.module.css */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem 2rem;
+    background-color: #fef1f6;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  .box {
+    position: relative;
+  }
+  
+  .box::before {
+    content: "";
+    width: 320px;
+    height: 320px;
+    background-color: #ffe3ed;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+  
+  .boxBody {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    background: linear-gradient(#ff8fa3, #ff4d6d);
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s;
+  }
+  
+  .img {
+    opacity: 0;
+    transform: translateY(0%);
+    transition: all 0.5s;
+    margin: 0 auto;
+    display: block;
+    width: 120px;
+  }
+  
+  .boxBody:hover {
+    cursor: pointer;
+    animation: box-body 1s forwards ease-in-out;
+  }
+  
+  .boxBody:hover .img {
+    opacity: 1;
+    transform: translateY(-130px);
+  }
+  
+  .boxBody:hover .boxLid {
+    animation: box-lid 1s forwards ease-in-out;
+  }
+  
+  .boxBody:hover .boxBowtie::before {
+    animation: box-bowtie-left 1.1s forwards ease-in-out;
+  }
+  
+  .boxBody:hover .boxBowtie::after {
+    animation: box-bowtie-right 1.1s forwards ease-in-out;
+  }
+  
+  .boxBody::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    background: linear-gradient(#ffffff, #ffe5ec);
+  }
+  
+  .boxLid {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 90%;
+    height: 40px;
+    width: 220px;
+    background: linear-gradient(#ff8fa3, #ff4d6d);
+    border-radius: 5%;
+    box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .boxLid::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    background: linear-gradient(#ffe5ec, #fff);
+  }
+  
+  .boxBowtie {
+    height: 100%;
+  }
+  
+  .boxBowtie::before,
+  .boxBowtie::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    border: 16px solid white;
+    border-radius: 50% 50% 0 50%;
+    position: absolute;
+    bottom: 99%;
+    z-index: -1;
+  }
+  
+  .boxBowtie::before {
+    left: 50%;
+    transform: translateX(-100%) skew(10deg, 10deg);
+  }
+  
+  .boxBowtie::after {
+    left: 50%;
+    transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+  }
+  
+  @keyframes box-lid {
+    0%, 42% {
+      transform: translate3d(-50%, 0%, 0) rotate(0deg);
+    }
+    60% {
+      transform: translate3d(-85%, -230%, 0) rotate(-25deg);
+    }
+    90%, 100% {
+      transform: translate3d(-119%, 225%, 0) rotate(-70deg);
+    }
+  }
+  
+  @keyframes box-body {
+    0% { transform: translate3d(0%, 0%, 0) rotate(0deg); }
+    25% { transform: translate3d(0%, 25%, 0) rotate(20deg); }
+    50% { transform: translate3d(0%, -15%, 0) rotate(0deg); }
+    70% { transform: translate3d(0%, 0%, 0) rotate(0deg); }
+  }
+  
+  @keyframes box-bowtie-right {
+    0%, 50%, 75% {
+      transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
+    }
+    90%, 100% {
+      transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+      box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  @keyframes box-bowtie-left {
+    0% {
+      transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+    }
+    50%, 75% {
+      transform: translate(-50%, -15%) rotate(45deg) skew(10deg, 10deg);
+    }
+    90%, 100% {
+      transform: translateX(-100%) rotate(0deg) skew(10deg, 10deg);
+    }
+  }
+  
+  .sidebar {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    max-width: 280px;
+    font-family: 'Fredoka', sans-serif;
+  }
+  
+  .nftTitle {
+    color: #ff4081;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .nftDetail {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 0.25rem;
+  }
+  
+  .legendary {
+    color: #c71585;
+    font-weight: bold;
+  }
+  
+  .addBtn {
+    background: #ff4081;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    color: white;
+    font-size: 1rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    cursor: pointer;
+  }  

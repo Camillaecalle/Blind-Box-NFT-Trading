@@ -19,3 +19,20 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+// // pages/index.tsx
+// import Head from 'next/head';
+// import BoxAnimation from '@/components/BoxAnimation';
+
+// export default function Home() {
+//   return (
+//     <>
+//       <Head>
+//         <title>BlindBox NFT</title>
+//       </Head>
+//       <main>
+//         <BoxAnimation />
+//       </main>
+//     </>
+//   );
+// }

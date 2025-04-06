@@ -14,13 +14,15 @@ const BoxGrid = () => {
       title: "Gold Box",
       price: "Ξ0.03",
       rarity: "High Rare Drop Rate",
-      image: "/placeholder.svg",
+      // image: "/placeholder.svg",
+      image: "/assets/gold-box.png",
     },
     {
       title: "Silver Box",
       price: "Ξ0.01",
       rarity: "Standard Drop Rate",
-      image: "/placeholder.svg",
+      // image: "/placeholder.svg",
+      image: "/assets/silver-box.png",
     },
   ];
 
@@ -39,6 +41,12 @@ const BoxGrid = () => {
             <p className={styles.boxPrice}>{box.price}</p>
             <p className={styles.boxRarity}>{box.rarity}</p>
             <button className={styles.openButton}>Open Box</button>
+            {/* <button
+                className={styles.openButton}
+                onClick={() => onOpenBox(box.tier)}
+              >
+                Open Box
+            </button> */}
           </div>
           {/* <div className={`${styles.decorativeElement} ${styles.bottomRight}`} /> */}
         </div>
